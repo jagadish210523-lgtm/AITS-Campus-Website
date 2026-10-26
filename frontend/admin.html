@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>AITS Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">A</span>
+            <span>AITS <small>ADMIN PORTAL</small></span>
+        </a>
+        <div class="header-actions">
+            <a class="button button-outline" href="index.html">← Student website</a>
+            <button id="logout-button" class="button button-danger hidden" type="button">
+                Log out
+            </button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <section id="login-section" class="form-card panel" style="max-width: 480px; margin: 35px auto;">
+            <p class="eyebrow">✦ &nbsp; RESTRICTED ACCESS</p>
+            <h2>Welcome back.</h2>
+            <p class="muted">Sign in to manage AITS campus events.</p>
+
+            <form id="login-form" class="form-stack">
+                <div>
+                    <label for="login-username">Username</label>
+                    <input id="login-username" name="username" required
+                           autocomplete="username" placeholder="Your admin username">
+                </div>
+                <div>
+                    <label for="login-password">Password</label>
+                    <input id="login-password" name="password" type="password"
+                           required autocomplete="current-password"
+                           placeholder="Enter your password">
+                </div>
+                <button class="button button-primary" type="submit">Sign in ↗</button>
+                <p id="login-message" class="form-message" role="status"></p>
+            </form>
+        </section>
+
+        <section id="dashboard-section" class="hidden">
+            <div class="admin-heading">
+                <p class="eyebrow">✦ &nbsp; CONTROL CENTER</p>
+                <h1>Your campus,<br>under control<span class="heading-period">.</span></h1>
+                <p class="muted">Create events, manage registrations, and keep campus life moving.</p>
+            </div>
+
+            <div class="admin-layout">
+                <div>
+                    <section class="panel">
+                        <p class="eyebrow">01 / EVENT SETUP</p>
+                        <h2>Create an event</h2>
+                        <p class="muted">Add a new campus event and set its registration deadline.</p>
+
+                        <form id="create-event-form" class="form-stack">
+                            <div>
+                                <label for="event-name">Event name</label>
+                                <input id="event-name" maxlength="100" required
+                                       placeholder="e.g. Technical Symposium">
+                            </div>
+                            <div>
+                                <label for="event-deadline">Registration deadline</label>
+                                <input id="event-deadline" type="datetime-local" required>
+                            </div>
+                            <button class="button button-primary" type="submit">+ Create event</button>
+                            <p id="event-message" class="form-message" role="status"></p>
+                        </form>
+                    </section>
+
+                    <section class="panel">
+                        <p class="eyebrow">02 / TEAM ACCESS</p>
+                        <h2>Add an administrator</h2>
+                        <p class="muted">
+                            Only a logged-in administrator can create another admin account.
+                        </p>
+
+                        <form id="create-admin-form" class="form-stack">
+                            <div>
+                                <label for="new-admin-username">Username</label>
+                                <input id="new-admin-username" maxlength="70" required
+                                       placeholder="Choose a username">
+                            </div>
+                            <div>
+                                <label for="new-admin-email">Email</label>
+                                <input id="new-admin-email" type="email" maxlength="100"
+                                       required placeholder="admin@example.com">
+                            </div>
+                            <div>
+                                <label for="new-admin-password">Password</label>
+                                <input id="new-admin-password" type="password"
+                                       minlength="8" required autocomplete="new-password"
+                                       placeholder="At least 8 characters">
+                            </div>
+                            <button class="button button-primary" type="submit">
+                                Create admin account
+                            </button>
+                            <p id="admin-message" class="form-message" role="status"></p>
+                        </form>
+                    </section>
+                </div>
+
+                <section class="panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">03 / EVENT MANAGEMENT</p>
+                            <h2>All events<span class="heading-period">.</span></h2>
+                            <p class="muted">Review deadlines and manage registrations.</p>
+                        </div>
+                        <button id="refresh-admin-events" class="button button-outline"
+                                type="button">↻ Refresh</button>
+                    </div>
+
+                    <div id="admin-events-list" class="event-admin-list">
+                        <p class="muted">Loading events...</p>
+                    </div>
+                    <p id="admin-events-message" class="form-message" role="status"></p>
+                </section>
+            </div>
+
+            <section id="roster-section" class="table-card hidden">
+                <p class="eyebrow">REGISTRATION RECORDS</p>
+                <h2 id="roster-title">Student registrations</h2>
+                <p id="roster-message" class="form-message" role="status"></p>
+                <div id="roster-content"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">A</span>
+            <span>AITS <small>CAMPUS EVENTS</small></span>
+        </a>
+        <p>Campus Events · Admin Portal</p>
+        <span class="footer-year">AUTHORIZED ACCESS ONLY.</span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

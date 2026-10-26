@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>AITS Campus Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="AITS Campus Events home">
+            <span class="brand-mark">A</span>
+            <span>AITS <small>CAMPUS EVENTS</small></span>
+        </a>
+        <nav class="header-actions">
+            <a class="nav-link" href="#live-events">Explore events</a>
+            <a class="button button-outline" href="admin.html">Admin portal ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS, IN MOTION</span>
+                <h1>Make your<br>campus life <span>count.</span></h1>
+                <p class="hero-description">
+                    Discover what's happening at Annamacharya Institute of
+                    Technology & Sciences. Find your next opportunity, register
+                    for events, and make every campus moment matter.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#live-events">
+                        Explore upcoming events <span>↗</span>
+                    </a>
+                    <a class="text-link" href="#expired-events">Explore past events ↓</a>
+                </div>
+                <div class="hero-note">
+                    <span class="note-icon">✦</span>
+                    <span>One campus. Countless experiences.</span>
+                </div>
+            </div>
+
+            <div class="hero-art" aria-label="Campus events illustration">
+                <div class="art-orbit orbit-one"></div>
+                <div class="art-orbit orbit-two"></div>
+                <div class="art-glow"></div>
+                <div class="art-card art-card-top">
+                    <span class="art-symbol">✳</span>
+                    <span>LEARN SOMETHING NEW</span>
+                </div>
+                <div class="art-center">
+                    <span class="art-center-small">AITS</span>
+                    <span class="art-center-title">BE<br>THERE.</span>
+                    <span class="art-center-line"></span>
+                    <span class="art-center-caption">YOUR NEXT CHAPTER STARTS HERE</span>
+                </div>
+                <div class="art-card art-card-bottom">
+                    <span class="art-mini-icon">↗</span>
+                    <span>SHOW UP. STAND OUT.</span>
+                </div>
+                <span class="floating-star star-one">✦</span>
+                <span class="floating-star star-two">✧</span>
+            </div>
+
+            <div class="hero-bottom">
+                <span>ANNAMACHARYA INSTITUTE OF TECHNOLOGY & SCIENCES</span>
+                <span>DISCOVER · PARTICIPATE · GROW</span>
+            </div>
+        </section>
+
+        <section class="section" id="live-events">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">DON'T MISS OUT</p>
+                    <h2>What's happening<span class="heading-period">.</span></h2>
+                    <p class="muted">Register before each event's deadline closes.</p>
+                </div>
+                <button class="button button-outline" id="refresh-events" type="button">
+                    <span class="refresh-symbol">↻</span> Refresh events
+                </button>
+            </div>
+
+            <div class="section-label">
+                <span class="section-label-dot"></span>
+                OPEN FOR REGISTRATION
+            </div>
+
+            <div id="live-events-list" class="event-grid">
+                <p class="muted">Loading events...</p>
+            </div>
+        </section>
+
+        <section class="section expired-section" id="expired-events">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE MOMENTS WE MADE</p>
+                    <h2>Past events<span class="heading-period">.</span></h2>
+                    <p class="muted">Registration is closed for these events.</p>
+                </div>
+                <span class="archive-label">EVENT ARCHIVE</span>
+            </div>
+
+            <div id="expired-events-list" class="event-grid">
+                <p class="muted">Loading events...</p>
+            </div>
+        </section>
+
+        <section class="closing-banner">
+            <div class="closing-symbol">✳</div>
+            <div>
+                <p class="eyebrow">YOUR NEXT EXPERIENCE AWAITS</p>
+                <h2>Be part of something happening.</h2>
+                <p>Keep checking back. New events appear when they're announced.</p>
+            </div>
+            <a class="button button-light" href="#live-events">Find an event ↑</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">A</span>
+            <span>AITS <small>CAMPUS EVENTS</small></span>
+        </a>
+        <p>Annamacharya Institute of Technology & Sciences</p>
+        <span class="footer-year">CAMPUS LIFE, CONNECTED.</span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
