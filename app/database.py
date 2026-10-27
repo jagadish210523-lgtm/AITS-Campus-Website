@@ -10,7 +10,7 @@ DB_PORT = os.environ.get("DB_PORT", "3306")
 DB_USER = os.environ["DB_USER"]
 DB_PASSWORD = os.environ["DB_PASSWORD"]
 DB_NAME = os.environ.get("DB_NAME", "defaultdb")
-DB_SSL_CA = os.environ.get("DB_SSL_CA", "/etc/secrets/aiven-ca.pem")
+DB_SSL_CA = os.environ.get("DB_SSL_CA", "/etc/secrets/ca.pem")
 
 URL_DATABASE = (
     f"mysql+pymysql://{quote_plus(DB_USER)}:{quote_plus(DB_PASSWORD)}"
