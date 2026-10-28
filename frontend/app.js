@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://aits-campus-website.onrender.com/";
 
 const liveList = document.getElementById("live-events-list");
 const expiredList = document.getElementById("expired-events-list");
