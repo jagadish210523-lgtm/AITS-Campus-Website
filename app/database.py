@@ -1,5 +1,5 @@
-
 import os
+print("DB_HOST exists:", "DB_HOST" in os.environ)
 from urllib.parse import quote_plus
 
 from sqlalchemy import create_engine
