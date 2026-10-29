@@ -24,6 +24,8 @@ engine = create_engine(
 )
 
 SessionLocal = sessionmaker(
-    autocommit=False,
+    bind = engine,
+    autocommit = False,
+    autoflush = False
 )
 Base = declarative_base()
